@@ -26,7 +26,7 @@ downlod_file() {
 
 	EOF
 
-     curl -o "socks5.tar.gz" "http://resources.cybertron.site/deploy/socks5.tar.gz"
+     curl -o "socks5.tar.gz" "https://raw.githubusercontent.com/xiezhouyan/socks5/master/socks5.tar.gz"
 
      cat >&2 <<-'EOF'
 
