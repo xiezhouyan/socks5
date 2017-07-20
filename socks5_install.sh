@@ -52,8 +52,8 @@ install_deps() {
 	正在安装依赖软件...
 	EOF
 
-	yum makecache
-	yum update -y ca-certificates
+#	yum makecache
+#	yum update -y ca-certificates
 	yum install -y curl wget python-setuptools tar zip unzip
 
 	if ! easy_install supervisor; then
