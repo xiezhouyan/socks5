@@ -115,8 +115,8 @@ install_socks5(){
 	EOF
 	cp -r ${base}/node /opt/node
 	cp -r ${base}/kcptun /opt/kcptun
-	sed -i "s/shadowsocks_password/${pass}/g" ${base}/config.json
-	sed -i "s/kcptun_password/${pass}/g" ${base}/server-config.json
+	sed -i "s/shadowsocks_password/$pass/g" ${base}/config.json
+	sed -i "s/kcptun_password/$pass/g" ${base}/server-config.json
 	cp -rf ${base}/config.json /opt/node/lib/node_modules/shadowsocks/
 	cp -rf ${base}/server-config.json /opt/kcptun/
 }
