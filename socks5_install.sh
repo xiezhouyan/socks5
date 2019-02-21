@@ -24,9 +24,9 @@ downlod_file() {
 	开始下载kcptun shadowsocks...
 
 	EOF
-
-     curl -o "socks5.tar.gz" "https://raw.githubusercontent.com/xiezhouyan/socks5/master/socks5.tar.gz"
-
+	if [ ! -f "/etc/supervisor/conf.d/kcptun-server.conf" ]; then
+	     curl -o "socks5.tar.gz" "https://raw.githubusercontent.com/xiezhouyan/socks5/master/socks5.tar.gz"
+	fi
      cat >&2 <<-'EOF'
 
 	解压kcptun shadowsocks...
