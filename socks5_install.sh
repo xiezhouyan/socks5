@@ -33,16 +33,6 @@ downlod_file() {
 
 	EOF
 	tar xzf socks5.tar.gz
-
-	cp -rf ${base}/supervisord /etc/init.d/
-
-	if ! chmod a+x /etc/init.d/supervisord; then
-		cat >&2 <<-'EOF'
-
-		设置执行权限失败...
-		EOF
-		exit_with_error
-	fi
 }
 # 安装需要的依赖软件
 install_deps() {
