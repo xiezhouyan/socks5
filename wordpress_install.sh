@@ -397,10 +397,11 @@ function main()
     installWordPress
     installRedis
 #    installBBR
-    installTheme
     config
 
     output
+    installTheme
+
 }
 
 main
