@@ -368,7 +368,7 @@ function installTheme() {
     php wp-cli.phar --info
     chmod +x wp-cli.phar
     sudo mv wp-cli.phar /usr/local/bin/wp
-    cd /var/www/${domain}
+    cd /var/www/$domain
     wp theme install hello-elementor
     wp theme install colibri-wp
     wp theme install sinatra
