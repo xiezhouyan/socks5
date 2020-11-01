@@ -362,13 +362,14 @@ function installBBR()
     echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
     bbr=false
 }
-function installTheme() {
-    echo "WordPress安装主题！"
+function installCore() {
+    echo "WordPress Core Install"
+    cd /var/www/$domain
+    wp core install --url=$domain --title=Example --admin_user=admin --admin_password=admin@qwe!123 --admin_email=wp_admin@163.com
     curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
     php wp-cli.phar --info
     chmod +x wp-cli.phar
     sudo mv wp-cli.phar /usr/local/bin/wp
-    cd /var/www/$domain
     wp theme install hello-elementor
     wp theme install colibri-wp
     wp theme install sinatra
@@ -382,6 +383,8 @@ function output()
     echo -e "WordPress数据库：${red}${dbname}${plain}"
     echo -e "WordPress数据库用户名：${red}${dbuser}${plain}"
     echo -e "WordPress数据库密码：${red}${dbpass}${plain}"
+    echo -e "WordPress管理员邮箱：wp_admin@163.com"
+    echo -e "WordPress管理员密码：admin@qwe!123"
     echo -e "博客访问地址：${red}http://${domain}${plain}"
     echo "==============================="
 }
@@ -400,7 +403,7 @@ function main()
     config
 
 
-    installTheme
+    installCore
     output
 }
 
