@@ -399,9 +399,9 @@ function main()
 #    installBBR
     config
 
-    output
-    installTheme
 
+    installTheme
+    output
 }
 
 main
