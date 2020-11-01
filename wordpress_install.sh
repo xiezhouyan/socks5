@@ -364,12 +364,12 @@ function installBBR()
 }
 function installCore() {
     echo "WordPress Core Install"
-    cd /var/www/$domain
-    wp core install --url=$domain --title=Example --admin_user=admin --admin_password=admin@qwe!123 --admin_email=wp_admin@163.com
     curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
     php wp-cli.phar --info
     chmod +x wp-cli.phar
     sudo mv wp-cli.phar /usr/local/bin/wp
+    cd /var/www/$domain
+    wp core install --url=$domain --title=Example --admin_user=admin --admin_password=admin@qwe!123 --admin_email=wp_admin@163.com
     wp theme install hello-elementor
     wp theme install colibri-wp
     wp theme install sinatra
