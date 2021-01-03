@@ -383,9 +383,9 @@ function buildSsl(){
     yum install snapd -y
     systemctl enable --now snapd.socket
     ln -s /var/lib/snapd/snap /snap
+    snap install --classic certbot
+    ln -s /snap/bin/certbot /usr/bin/certbot
     systemctl stop nginx
-    yum install certbot -y
-    yum install  python-certbot-nginx -y
     certbot --nginx
     systemctl start nginx
     
