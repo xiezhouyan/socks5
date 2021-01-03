@@ -382,7 +382,7 @@ function buildSsl(){
     dnf install certbot python3-certbot-nginx -y
 
     systemctl stop nginx    
-    certbot --nginx
+    certbot --nginx -d ${domain}
     systemctl start nginx
 }
 function output()
