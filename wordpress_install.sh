@@ -381,7 +381,7 @@ function buildSsl(){
     dnf upgrade
     yum install epel-release
     yum install snapd
-    ln -s /var/lib/snapd/snap /snap
+    ln -s /var/lib/snapd/snap /usr/local/bin/snap
     systemctl stop nginx
     yum install certbot -y
     yum install  python-certbot-nginx -y
