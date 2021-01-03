@@ -380,6 +380,7 @@ function buildSsl(){
     systemctl stop nginx
     yum install certbot -y
     yum install  python-certbot-nginx -y
+    certbot --nginx
     systemctl start nginx
     
 }
