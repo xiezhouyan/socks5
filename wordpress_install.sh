@@ -377,6 +377,10 @@ function installCore() {
 }
 function buildSsl(){
     echo "WordPress Core SSL"
+    systemctl stop nginx
+    yum install certbot -y
+    yum install  python-certbot-nginx -y
+    systemctl start nginx
     
 }
 function output()
