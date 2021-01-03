@@ -377,6 +377,12 @@ function installCore() {
 }
 function buildSsl(){
     echo "WordPress Core SSL"
+    dnf install epel-release
+    dnf upgrade
+    yum install epel-release
+    yum install snapd
+    systemctl enable --now snapd.socket
+    ln -s /var/lib/snapd/snap /snap
     systemctl stop nginx
     yum install certbot -y
     yum install  python-certbot-nginx -y
