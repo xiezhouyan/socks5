@@ -379,15 +379,11 @@ function buildSsl(){
     echo "WordPress Core SSL"
     dnf install epel-release
     dnf upgrade
-    yum install epel-release  -y
-    yum install snapd -y
-    systemctl enable --now snapd.socket
-    ln -s /var/lib/snapd/snap /snap
-    snap install --classic certbot
-    systemctl stop nginx
+    dnf install certbot python3-certbot-nginx -y
+
+    systemctl stop nginx    
     certbot --nginx
     systemctl start nginx
-    
 }
 function output()
 {
