@@ -392,8 +392,8 @@ function output()
     echo -e "WordPress数据库：${red}${dbname}${plain}"
     echo -e "WordPress数据库用户名：${red}${dbuser}${plain}"
     echo -e "WordPress数据库密码：${red}${dbpass}${plain}"
-    echo -e "WordPress管理员邮箱：wp_admin@163.com"
-    echo -e "WordPress管理员密码：admin@qwe!123"
+    echo -e "WordPress管理员邮箱：${red}wp_admin@163.com"
+    echo -e "WordPress管理员密码：${red}admin@qwe!123"
     echo -e "博客访问地址：${red}http://${domain}${plain}"
     echo "==============================="
 }
