@@ -375,6 +375,10 @@ function installCore() {
     wp theme install sinatra
     cd ~
 }
+function buildSsl(){
+    echo "WordPress Core SSL"
+    
+}
 function output()
 {
     echo "WordPress安装成功！"
@@ -404,6 +408,7 @@ function main()
 
 
     installCore
+    buildSsl
     output
 }
 
