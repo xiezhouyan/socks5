@@ -401,7 +401,7 @@ function output()
 function main()
 {
     checkSystem
-    if [ -f "/opt/wp_install.txt" ];
+    if [ ! -f "/opt/wp_install.txt" ];
         then
             preInstall
             installNginx
@@ -418,6 +418,7 @@ function main()
     installCore
     buildSsl
     output
+    cat "install" > /opt/wp_install.txt
 }
 
 main
