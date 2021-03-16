@@ -122,8 +122,8 @@ function config()
 {
     # config mariadb
     systemctl start mariadb
-    dbname= `echo $domain | sed -e "s/\./_/g"`
-    dbuser= `echo $domain | sed -e "s/\./_/g"`
+    dbname= `echo "${domain}" | sed -e "s/\./_/g"`
+    dbuser= `echo "${domain}" | sed -e "s/\./_/g"`
     echo $dbname
     echo $dbuser
     dbpass=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1`
