@@ -418,7 +418,7 @@ function main()
     installCore
     buildSsl
     output
-    cat "install" > /opt/wp_install.txt
+    echo "install" > /opt/wp_install.txt
 }
 
 main
