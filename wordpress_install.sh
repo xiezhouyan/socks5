@@ -129,8 +129,8 @@ function config()
     mysql -uroot <<EOF
 DELETE FROM mysql.user WHERE User='${dbuser}';
 CREATE DATABASE ${dbname} default charset utf8mb4;
-CREATE USER '${dbuser}'@'%' IDENTIFIED BY '${dbpass}';
-GRANT ALL PRIVILEGES ON '${dbname}'.* to '${dbuser}'@'%';
+CREATE USER ${dbuser}@'%' IDENTIFIED BY '${dbpass}';
+GRANT ALL PRIVILEGES ON ${dbname}.* to ${dbuser}@'%';
 FLUSH PRIVILEGES;
 EOF
 
