@@ -122,10 +122,9 @@ function config()
 {
     # config mariadb
     systemctl start mariadb
-    dbname=`echo "${domain}" | sed -e "s/\./_/g"`
-    dbuser=`echo "${domain}" | sed -e "s/\./_/g"`
-    echo $dbname
-    echo $dbuser
+    dbkey=`echo "${domain}" | sed -e "s/\./_/g"`
+    dbname=${domain}
+    dbuser=${domain}
     dbpass=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1`
     mysql -uroot <<EOF
 DELETE FROM mysql.user WHERE User='${domain}';
