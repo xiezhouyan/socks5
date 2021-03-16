@@ -122,8 +122,9 @@ function config()
 {
     # config mariadb
     systemctl start mariadb
-    dbname=${domain}
-    dbuser=${domain}
+    name=echo ${domain}|sed -e "s/\./_/g"
+    dbname=$name
+    dbuser=$name
     dbpass=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1`
     mysql -uroot <<EOF
 DELETE FROM mysql.user WHERE User='${domain}';
@@ -408,6 +409,7 @@ function main()
             installPHP
             installMysql
             installRedis
+            echo "install" > /opt/wp_install.txt
     fi
 
 #    installBBR
@@ -418,7 +420,6 @@ function main()
     installCore
     buildSsl
     output
-    echo "install" > /opt/wp_install.txt
 }
 
 main
