@@ -54,13 +54,13 @@ function preInstall()
     fi
 
 
-    wget -O ~/vim.tar.gz https://github.com/tlanyan/scripts/raw/master/files/vim.tar.gz
-    if [ -f vim.tar.gz ]; then
-        tar -zxf vim.tar.gz
-        rm -rf vim.tar.gz
-    fi
+    # wget -O ~/vim.tar.gz https://github.com/tlanyan/scripts/raw/master/files/vim.tar.gz
+    # if [ -f vim.tar.gz ]; then
+    #     tar -zxf vim.tar.gz
+    #     rm -rf vim.tar.gz
+    # fi
 
-    echo 'export EDITOR=vim' >> ~/.bashrc
+    # echo 'export EDITOR=vim' >> ~/.bashrc
 }
 
 function installNginx()
@@ -124,7 +124,7 @@ function config()
     # config mariadb
     systemctl start mariadb
     dbname=${domain}
-    dbuser="wordpress"
+    dbuser=${domain}
     dbpass=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1`
     mysql -uroot <<EOF
 DELETE FROM mysql.user WHERE User='';
