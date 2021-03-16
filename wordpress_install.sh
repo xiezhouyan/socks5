@@ -401,11 +401,15 @@ function output()
 function main()
 {
     checkSystem
-    # preInstall
-    # installNginx
-    # installPHP
-    # installMysql
-    # installRedis
+    if [ -f "/opt/wp_install.txt" ];
+        then
+            preInstall
+            installNginx
+            installPHP
+            installMysql
+            installRedis
+    fi
+
 #    installBBR
     collect
     installWordPress
