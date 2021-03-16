@@ -402,15 +402,14 @@ function main()
 {
     checkSystem
     # preInstall
-    collect
     # installNginx
     # installPHP
     # installMysql
-    installWordPress
     # installRedis
 #    installBBR
+    collect
+    installWordPress
     config
-
 
     installCore
     buildSsl
