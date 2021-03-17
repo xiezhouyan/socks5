@@ -383,7 +383,7 @@ function buildSsl(){
 
     systemctl stop nginx    
     certbot --nginx -d ${domain}
-    systemctl start nginx
+    systemctl restart nginx
 }
 function output()
 {
