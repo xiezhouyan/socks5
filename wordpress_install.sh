@@ -162,7 +162,7 @@ EOF
   }
   s/put your unique phrase here/salt()/ge
 ' wp-config.php
-    chown -R apache:apache /var/www/$domain
+    chown -R nginx:nginx /var/www/$domain
 
     # config nginx
     mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
@@ -383,7 +383,7 @@ function buildSsl(){
 
     systemctl stop nginx    
     certbot --nginx -d ${domain}
-    systemctl restart nginx
+    systemctl start nginx
 }
 function output()
 {
