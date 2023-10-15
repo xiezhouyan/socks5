@@ -124,7 +124,7 @@ server {
     listen 80;
 }
 EOF
-    ln -s /etc/nginx/sites-available/${domain} /etc/nginx/sites-enable/${domain}
+    ln -s /etc/nginx/sites-available/${domain} /etc/nginx/sites-enabled/${domain}
     systemctl restart php8.1-fpm mariadb nginx 
 }
 
