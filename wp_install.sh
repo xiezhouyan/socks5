@@ -85,7 +85,7 @@ function config()
     dbname=${dbkey}
     dbuser=${dbkey}
     dbpass=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1`
-    mysql -uroot <<EOF
+    mysql -u root <<EOF
 DELETE FROM mysql.user WHERE User='';
 CREATE DATABASE $dbname default charset utf8mb4;
 CREATE USER ${dbuser}@'%' IDENTIFIED BY '${dbpass}';
