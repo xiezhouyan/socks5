@@ -84,7 +84,9 @@ function config()
     dbkey=`echo "${domain}" | sed -e "s/\./_/g"`
     dbname=${dbkey}
     dbuser=${dbkey}
-    dbpass=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1`
+    # dbpass=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1`
+    dbpass=admin@qwe!123
+
     mysql -u root <<EOF
 DELETE FROM mysql.user WHERE User='';
 CREATE DATABASE $dbname default charset utf8mb4;
