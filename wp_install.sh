@@ -97,7 +97,6 @@ EOF
 
 
     # config nginx
-    mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
 
     cat > /etc/nginx/sites-available/${domain}<<-EOF
 server {
