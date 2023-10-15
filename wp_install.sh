@@ -72,7 +72,7 @@ function installWordPress()
     wp core install --url=$domain --title=$domain --admin_user=admin --admin_password=admin@qwe!123 --admin_email=wp_admin@163.com --allow-root 
     wp theme install hello-elementor --allow-root 
     wp theme install botiga --activate  --allow-root 
-    wp plugin --install https://downloads.wordpress.org/plugin/woocommerce.8.2.0.zip --activate --allow-root 
+    wp plugin install woocommerce --activate --allow-root
     chown -R www-data:www-data /var/www/$domain
 }
 
