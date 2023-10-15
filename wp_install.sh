@@ -41,6 +41,7 @@ function installNginx()
 {
     apt-get install nginx -y
     systemctl enable nginx
+    systemctl restart nginx
 }
 
 function installPHP()
@@ -122,8 +123,7 @@ server {
 }
 EOF
     ln -s /etc/nginx/sites-available/${domain} /etc/nginx/sites-enable/${domain}
-    # restart service
-    systemctl restart php-fpm mariadb nginx 
+    systemctl restart php8.1-fpm mariadb nginx 
 }
 
 
