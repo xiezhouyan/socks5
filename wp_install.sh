@@ -131,9 +131,6 @@ function buildSsl(){
     echo "WordPress Core SSL"
     apt install certbot python3-certbot-nginx -y
     certbot -n -m xiezhouyan@gmail.com -d $domain --agree-tos  --nginx 
-    killall nginx
-    # systemctl stop nginx    
-    certbot --nginx -d ${domain}
     systemctl restart nginx
 }
 function output()
