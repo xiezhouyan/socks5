@@ -164,9 +164,9 @@ function main()
 
 #    installBBR
     collect
-    installWordPress
     config
     buildSsl
+    installWordPress
     output
 }
 
