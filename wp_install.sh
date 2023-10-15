@@ -110,7 +110,7 @@ server {
         client_max_body_size 512m;
 
         location / {
-          try_files $uri $uri/ @rewrites;
+          try_files \$uri \$uri/ @rewrites;
         }
         location @rewrites {
           rewrite ^(.+)$ /index.php last;
