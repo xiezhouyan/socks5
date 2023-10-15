@@ -51,7 +51,7 @@ function installPHP()
 
 function installMysql()
 {
-    apt-get install mariadb-server;
+    apt-get install mariadb-server -y;
     systemctl restart mariadb.
 }
 
