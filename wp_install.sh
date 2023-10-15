@@ -68,10 +68,12 @@ function installWordPress()
     mkdir -p /var/www/${domain};
     cd /var/www/${domain};
     wp core download --allow-root
+    wp config create --dbname=$dbname --dbuser=$dbuser --dbpass=$dbpass --dbhost=127.0.0.1 --dbprefix=wp --allow-root
     wp core install --url=$domain --title=$domain --admin_user=admin --admin_password=admin@qwe!123 --admin_email=wp_admin@163.com
     wp theme install hello-elementor --allow-root 
     wp theme install botiga --activate  --allow-root 
     wp plugin --install https://downloads.wordpress.org/plugin/woocommerce.8.2.0.zip --activate --allow-root 
+    chown -R www-data:www-data /var/www/$domain
 }
 
 function config()
@@ -92,8 +94,7 @@ EOF
 
     # config wordpress
     cd /var/www/$domain
-    wp config create --dbname=$dbname --dbuser=$dbuser --dbpass=$dbpass --dbhost=127.0.0.1 --dbprefix=wp --allow-root
-    chown -R www-data:www-data /var/www/$domain
+
 
     # config nginx
     mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
