@@ -92,7 +92,7 @@ function config()
     dbpass='admin@qwe!123'
 echo $dbpass
     mysql -u root <<EOF
-DELETE FROM mysql.user WHERE User='';
+DELETE FROM mysql.user WHERE User='${dbuser}';
 CREATE DATABASE $dbname default charset utf8mb4;
 CREATE USER ${dbuser}@'%' IDENTIFIED BY '${dbpass}';
 GRANT ALL PRIVILEGES ON ${dbname}.* to ${dbuser}@'%';
