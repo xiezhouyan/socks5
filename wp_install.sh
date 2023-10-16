@@ -92,7 +92,7 @@ function config()
     mysql -u root <<EOF
 DROP user IF EXISTS ${dbuser};
 CREATE DATABASE IF NOT EXISTS $dbname default charset utf8mb4;
-CREATE USER ${dbuser}@'%' IDENTIFIED BY ${dbpass};
+CREATE USER ${dbuser}@'%' IDENTIFIED BY '${dbpass}';
 GRANT ALL PRIVILEGES ON ${dbname}.* to ${dbuser}@'%';
 FLUSH PRIVILEGES;
 EOF
