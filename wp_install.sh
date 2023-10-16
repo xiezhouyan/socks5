@@ -33,6 +33,8 @@ function collect()
 
 function preInstall()
 {
+    apt install python-software-properties -y
+    add-apt-repository ppa:ondrej/php -y
     apt-get update -y
     apt-get install vim git -y
 }
@@ -46,8 +48,8 @@ function installNginx()
 
 function installPHP()
 {
-    apt-get install php php-cli php-fpm php-bcmath php-gd php-mbstring php-mysql  -y 
-    systemctl restart php8.1-fpm.service
+    apt-get install php7.4  php7.4-mysql php7.4-cli -y 
+    systemctl restart php7.4-fpm.service
 }
 
 function installMysql()
@@ -122,13 +124,13 @@ server {
         location ~ \.php$ {
 	  proxy_set_header  Host  www.honestfulphilment.com;
 	  include snippets/fastcgi-php.conf;
-	  fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+	  fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
         }
     listen 80;
 }
 EOF
     ln -s /etc/nginx/sites-available/${domain} /etc/nginx/sites-enabled/${domain}
-    systemctl restart php8.1-fpm mariadb nginx 
+    systemctl restart php7.4-fpm mariadb nginx 
 }
 
 
