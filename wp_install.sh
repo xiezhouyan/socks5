@@ -72,7 +72,8 @@ function installWordPress()
     wp config create --dbname=$dbname --dbuser=$dbuser --dbpass=$dbpass --dbhost=127.0.0.1 --dbprefix=wp --allow-root
     wp core install --url=$domain --title=$domain --admin_user=admin --admin_password=admin@qwe!123 --admin_email=wp_admin@163.com --allow-root 
     wp theme install hello-elementor --allow-root 
-    wp theme install botiga --activate  --allow-root 
+    wp theme install botiga  --allow-root
+    wp theme install express-store --activate  --allow-root
     wp plugin install woocommerce --activate --allow-root
     chown -R www-data:www-data /var/www/$domain
 }
