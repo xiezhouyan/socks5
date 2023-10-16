@@ -97,10 +97,6 @@ GRANT ALL PRIVILEGES ON ${dbname}.* to ${dbuser}@'%';
 FLUSH PRIVILEGES;
 EOF
 
-    # config wordpress
-    cd /var/www/$domain
-
-
     # config nginx
 
     cat > /etc/nginx/sites-available/${domain}<<-EOF
