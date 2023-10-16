@@ -71,7 +71,6 @@ function installWordPress()
     mkdir -p /var/www/${domain};
     cd /var/www/${domain};
     wp core download --allow-root
-    echo $dbpass
     wp config create --dbname=$dbname --dbuser=$dbuser --dbpass=$dbpass --dbhost=127.0.0.1 --dbprefix=wp --allow-root
     wp core install --url=$domain --title=$domain --admin_user=admin --admin_password=admin@qwe!123 --admin_email=wp_admin@163.com --allow-root 
     wp theme install hello-elementor --allow-root 
@@ -90,7 +89,6 @@ function config()
     dbuser=${dbkey}
     # dbpass=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1`
     dbpass='admin@qwe!123'
-echo $dbpass
     mysql -u root <<EOF
 DELETE FROM mysql.user WHERE User='${dbuser}';
 CREATE DATABASE $dbname default charset utf8mb4;
