@@ -165,7 +165,7 @@ function main()
             echo "install" > /opt/wp_install.txt
     fi
 
-    # collect
+    collect
     config
     # buildSsl
     # installWordPress
