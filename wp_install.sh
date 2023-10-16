@@ -92,7 +92,7 @@ function config()
     mysql -u root <<EOF
 DELETE FROM mysql.user WHERE User='${dbuser}';
 CREATE DATABASE $dbname default charset utf8mb4;
-CREATE USER ${dbuser}@'%' IDENTIFIED BY '${dbpass}';
+CREATE USER ${dbuser}@'%' IDENTIFIED BY 'admin123';
 GRANT ALL PRIVILEGES ON ${dbname}.* to ${dbuser}@'%';
 CREATE USER ${dbuser}@'localhost' IDENTIFIED BY '${dbpass}';
 GRANT ALL PRIVILEGES ON ${dbname}.* to ${dbuser}@'localhost';
