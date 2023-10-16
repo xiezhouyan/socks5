@@ -77,6 +77,7 @@ function installWordPress()
     wp theme install hello-elementor --allow-root 
     wp theme install botiga  --allow-root
     wp theme install express-store --activate  --allow-root
+    wp rewrite structure '/%postname%/'
     chown -R www-data:www-data /var/www/$domain
 }
 
