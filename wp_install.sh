@@ -165,9 +165,9 @@ function main()
 
     collect
     config
-    # buildSsl
-    # installWordPress
-    # output
+    buildSsl
+    installWordPress
+    output
 }
 
 main
