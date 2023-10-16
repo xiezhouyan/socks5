@@ -88,11 +88,11 @@ function config()
     dbname=${dbkey}
     dbuser=${dbkey}
     # dbpass=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1`
-    dbpass='admin@qwe'
+    dbpass='admin@qwe123'
     mysql -u root <<EOF
-DELETE FROM mysql.user WHERE User='${dbuser}';
+DROP user ${dbuser};
 CREATE DATABASE $dbname default charset utf8mb4;
-CREATE USER ${dbuser}@'%' IDENTIFIED BY 'admin123';
+CREATE USER ${dbuser}@'%' IDENTIFIED BY ${dbpass};
 GRANT ALL PRIVILEGES ON ${dbname}.* to ${dbuser}@'%';
 CREATE USER ${dbuser}@'localhost' IDENTIFIED BY '${dbpass}';
 GRANT ALL PRIVILEGES ON ${dbname}.* to ${dbuser}@'localhost';
