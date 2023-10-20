@@ -85,8 +85,8 @@ function installWordPress()
 	  $wpdb->prefix . "woocommerce_api_keys",
 	  array(
 	    "user_id" => 1,
-	    "description" => "Frontend Client",
-	    "permissions" => "read",
+	    "description" => "Client",
+	    "permissions" => "read_write",
 	    "consumer_key"=> wc_api_hash("ck_a6dcc64339b4a95edc680519c1b83d954a3319c9"),
 	    "consumer_secret" => "cs_a4b514e95c5e415a92d13aace50c4e368f04498f",
 	    "truncated_key" => substr("ck_a6dcc64339b4a95edc680519c1b83d954a3319c9", -7)
