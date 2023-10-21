@@ -54,8 +54,8 @@ function installPHP()
 
 function installMysql()
 {
-    apt-get install mariadb-server -y;
-    systemctl restart mariadb.
+    apt-get install mysql-server -y;
+    systemctl restart mysql.
 }
 
 
@@ -98,7 +98,7 @@ function installWordPress()
 function config()
 {
     # config mariadb
-    systemctl restart mariadb
+    systemctl restart mysql
     dbkey=`echo "${domain}" | sed -e "s/\./_/g"`
     dbname=${dbkey}
     dbuser=${dbkey}
