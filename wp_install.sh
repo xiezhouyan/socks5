@@ -34,7 +34,7 @@ function collect()
 function preInstall()
 {
     apt-get update -y
-    apt install python-software-properties -y
+    apt install software-properties-common -y
     add-apt-repository ppa:ondrej/php -y
     apt-get install vim git -y
 }
