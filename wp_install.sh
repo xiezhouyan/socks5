@@ -48,7 +48,7 @@ function installNginx()
 
 function installPHP()
 {
-    apt-get install php7.4 php7.4-fpm php7.4-mysql php7.4-cli php7.4-xml -y 
+    apt-get install php7.4 php7.4-fpm php7.4-mysql php7.4-cli php7.4-xml pp7.4-xmlrpc php7.4-curl php7.4-mcrypt php7.4-mbstring -y 
     systemctl restart php7.4-fpm.service
 }
 
