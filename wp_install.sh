@@ -68,6 +68,7 @@ function installWordPress()
 	sudo mv wp-cli.phar /usr/local/bin/wp
     fi
     echo "WordPress Core Install"
+    rm -rf /var/www/${domain}
     mkdir -p /var/www/${domain};
     cd /var/www/${domain};
     wp core download --version=6.2.3 --allow-root
@@ -105,6 +106,7 @@ function config()
     # dbpass=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1`
     dbpass='admin@qwe123'
     mysql -u root <<EOF
+DROP database IF EXISTS $dbname;
 DROP user IF EXISTS ${dbuser};
 CREATE DATABASE IF NOT EXISTS $dbname default charset utf8mb4;
 CREATE USER ${dbuser}@'%' IDENTIFIED BY '${dbpass}';
