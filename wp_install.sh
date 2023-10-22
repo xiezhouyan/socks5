@@ -71,7 +71,7 @@ function installWordPress()
     rm -rf /var/www/${domain}
     mkdir -p /var/www/${domain};
     cd /var/www/${domain};
-    wp core download --version=6.0.6 --allow-root
+    wp core download --version=6.2.3 --allow-root
     wp config create --dbname=$dbname --dbuser=$dbuser --dbpass=$dbpass --dbhost=127.0.0.1 --dbprefix=wp --allow-root
     wp core install --url=$domain --title=$domain --admin_user=admin --admin_password=admin@qwe!123 --admin_email=wp_admin@163.com --allow-root 
     wp plugin install https://downloads.wordpress.org/plugin/woocommerce.7.7.2.zip --activate --allow-root 
