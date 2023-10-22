@@ -170,8 +170,8 @@ function main()
         then
             preInstall
             installNginx
+	    installMysql
             installPHP
-            installMysql
             echo "install" > /opt/wp_install.txt
     fi
 
