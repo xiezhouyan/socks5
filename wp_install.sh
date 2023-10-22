@@ -76,7 +76,7 @@ function installWordPress()
     wp core install --url=$domain --title=$domain --admin_user=admin --admin_password=admin@qwe!123 --admin_email=wp_admin@163.com --allow-root 
     wp plugin install https://downloads.wordpress.org/plugin/woocommerce.8.1.1.zip --activate --allow-root 
     wp plugin install https://raw.githubusercontent.com/xiezhouyan/socks5/master/fifu-6.2.2.zip --activate --allow-root 
-    wp theme install botiga  --allow-root
+    wp theme install botiga  --activate --allow-root
     wp rewrite structure '/%postname%/' --allow-root
     wp eval '
 	global $wpdb;
