@@ -98,7 +98,7 @@ function installWordPress()
 
 function config()
 {
-    # config mariadb
+    # config mysql
     systemctl restart mysql
     dbkey=`echo "${domain}" | sed -e "s/\./_/g"`
     dbname=${dbkey}
@@ -141,7 +141,7 @@ server {
 EOF
     rm -rf /etc/nginx/sites-enabled/${domain}
     ln -s /etc/nginx/sites-available/${domain} /etc/nginx/sites-enabled/${domain}
-    systemctl restart php7.4-fpm mariadb nginx 
+    systemctl restart php7.4-fpm mysql nginx 
 }
 
 
